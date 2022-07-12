@@ -6,9 +6,9 @@ function listener() {
 
   if (robotNumber > 0 && robotNumber <= 20) {
     // update with your own AirTable values
-    var APIKey = 'key' + 'q6cE5AJCfLujRX';
-    var BaseID = 'app' + 'UD1PwGJYxVxy1t';
-    var TableName = 'RobotTable';
+    var APIKey = 'key' + 'OhhcIlqLY9rGEx';
+    var BaseID = 'app' + 'v2Dfqrd1mTDlyk';
+    var TableName = 'Robots';
     var ObjectID = recIDs.get('Robot' + robotNumber);
 
     var Airtable = require('airtable');
@@ -31,12 +31,12 @@ function listener() {
         console.log("Running the command:", record.get("Value"))
 
         // Clear the old command, update to "no_command"
-        base(TableName).update(ObjectID, { "Value": "no_command" }, function(err, record) {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          // console.log("New Command: " + record.get("Name"));
+        base(TableName).update(ObjectID, { "Value": "no_command" }, 
+          function(err, record) {
+            if (err) {
+              console.error(err);
+              return;
+            }
         });
         runCommands(record.get("Value"));
       } 
@@ -66,14 +66,14 @@ function listener() {
       });
     }
     else if (command == "right") {
-      var motorTwo = new mySPIKE.Motor(motorOne);
-      motorTwo.run_for_degrees(405, -50, function() {
+      var motorOne = new mySPIKE.Motor(motorOne);
+      motorOne.run_for_degrees(405, -50, function() {
         console.log("Right")
       });
     }
     else if (command == "left") {
-      var motorOne = new mySPIKE.Motor(motorTwo);
-      motorOne.run_for_degrees(405, -50, function() {
+      var motorTwo = new mySPIKE.Motor(motorTwo);
+      motorTwo.run_for_degrees(405, 50, function() {
         console.log("Left")
       });
     }

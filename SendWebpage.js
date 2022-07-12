@@ -1,25 +1,25 @@
 const recIDs = new Map();
 
-recIDs.set("Robot1", "recCyshNHuffHGRKB");
-recIDs.set("Robot2", "recOUdvzkJCBDvrRa");
-recIDs.set("Robot3", "recWDmsg1rUQfjcI2");
-recIDs.set("Robot4", "rec7ruH0bvuVL6LBy");
-recIDs.set("Robot5", "recPx6VeSEBqHqD0a");
-recIDs.set("Robot6", "recv2JC9Kqlk21gRd");
-recIDs.set("Robot7", "recoYPtA7xMJ7rZXM");
-recIDs.set("Robot8", "recwyxfUe0kiUNqLu");
-recIDs.set("Robot9", "recVLT3sjGrNbyXeZ");
-recIDs.set("Robot10", "receLWcJmopQdvVOp");
-recIDs.set("Robot11", "recctfKUyQPRDBp7k");
-recIDs.set("Robot12", "rec2RIbZjjoQczFaF");
-recIDs.set("Robot13", "recYZa06d7m6ET1a1");
-recIDs.set("Robot14", "rectzDBYxT9hhqfye");
-recIDs.set("Robot15", "recb3UNzfWy708Qcr");
-recIDs.set("Robot16", "recNj98YTvHAiq8fE");
-recIDs.set("Robot17", "rec3qtdWNvbRsv6M9");
-recIDs.set("Robot18", "recnIVkgZnvXVkpMG");
-recIDs.set("Robot19", "recAJabLCgc6kxr5e");
-recIDs.set("Robot20", "reca2mVP36ATYU7oi");
+recIDs.set("Robot1", "recNRC68TjMTeGY9W");
+recIDs.set("Robot2", "recYAHYK3P7ck9WMs");
+recIDs.set("Robot3", "reca80YEHi93YJmW9");
+recIDs.set("Robot4", "recSE7H7QVmS6XlAo");
+recIDs.set("Robot5", "recNQDu8CA62UpDPn");
+recIDs.set("Robot6", "recew8vZQfJsq125n");
+recIDs.set("Robot7", "recSdWUQywfl5NVNl");
+recIDs.set("Robot8", "recCyUSBbCIeO4Z3t");
+recIDs.set("Robot9", "recxOzIo95hlwfKlu");
+recIDs.set("Robot10", "recBlMkHpthDBY56g");
+recIDs.set("Robot11", "recwMgCDMKK7wIlEj");
+recIDs.set("Robot12", "recnamGC7rcpexfYz");
+recIDs.set("Robot13", "recLbtUVdlY5yjwDC");
+recIDs.set("Robot14", "recXOwb2LGTYphVTp");
+recIDs.set("Robot15", "reccrZAtw2rmQg1Z1");
+recIDs.set("Robot16", "reciyyqHMVSZpZpJ8");
+recIDs.set("Robot17", "recqqhrZkLrKOXrxI");
+recIDs.set("Robot18", "recD9ELcfDXgGJXW8");
+recIDs.set("Robot19", "recI7rDVrZKTvXqE4");
+recIDs.set("Robot20", "recaD3mcmJkYZl4xI");
 
 function update_airtable(command) {
   console.log('Update Airtable');
@@ -29,9 +29,9 @@ function update_airtable(command) {
   if (robotNumber > 0 && robotNumber <=20) {
      
     // update with your values
-    var APIKey = 'key' + 'q6cE5AJCfLujRX';
-    var BaseID = 'app' + 'UD1PwGJYxVxy1t';
-    var TableName = 'RobotTable';
+    var APIKey = 'key' + 'OhhcIlqLY9rGEx';
+    var BaseID = 'app' + 'v2Dfqrd1mTDlyk';
+    var TableName = 'Robots';
     var ObjectID = recIDs.get('Robot' + robotNumber);
   
     var Airtable = require('airtable');

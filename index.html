@@ -123,7 +123,8 @@
 		<ul>
 			<li><a href='./resources/ML_with_SPIKE_Prime_Workshop.pdf' target=_blank>**** ADD SLIDES HERE *** </a></li> <br> <br> <br>
 			<li><a href="https://airtable.com/">Airtable</a></li>
-      <li><a href="https://pyairtable.readthedocs.io/en/latest/api.html#overview"> PyAirTable documentation</li>
+      <li><a href="https://docs.google.com/document/d/1-lBXxY9SRxkj5YPd5eincCnfen9G5I4S5P0lEUazADA/edit?usp=sharing">Airtable Setup Documentation</a></li>
+      <li><a href="https://pyairtable.readthedocs.io/en/latest/api.html#overview"> PyAirtable documentation</li>
       <li><a href='https://education.lego.com/en-us/downloads/spike-app/software' target=_blank>LEGO Education's SPIKE App Software</a> (you can reference the documentation in this for the RasPi functions)</li> 
 				<ul><li>Beta: <a href='https://spike.legoeducation.com' target=_blank>Web App version</a></li></ul>
 			<li><a href='https://tufts-cr-for-lego.codingrooms.com/documentation/spike_prime_python_knowledge_base' target=_blank>SPIKE Prime Python Knowledge Base</a> (webpage)</li>
@@ -177,12 +178,12 @@
 
     <div class="tab">
       <button class="tablinks" onclick="openCity(event, 'whatAreTelerobots')">What are Telerobots?</button>
-      <button class="tablinks" onclick="openCity(event, 'airtableIntro')">What is AirTable?</button>
+      <button class="tablinks" onclick="openCity(event, 'airtableIntro')">What is Airtable?</button>
       <button class="tablinks" onclick="openCity(event, 'real-worldExamples')">Real-World Examples</button>
     </div>
 
     <div id="whatAreTelerobots" class="tabcontent"> <br>
-      At the most basic level, telerobots are remotely controlled robots. <br><br>In this workshop, we want to demonstrate the process of building, coding, connecting telerobots over long distances. The telerobots will be either a SPIKE Prime or a Raspberry Pi 4 with a PiHat (using SPIKE Prime motors, sensors, etc.). To communicate, one person will send commands to AirTable (described in the next tab), and these commands will be read by a receiving source that reads the commands and runs the corresponding action to the command. <br> <br>
+      At the most basic level, telerobots are remotely controlled robots. <br><br>In this workshop, we want to demonstrate the process of building, coding, connecting telerobots over long distances. The telerobots will be either a SPIKE Prime or a Raspberry Pi 4 with a PiHat (using SPIKE Prime motors, sensors, etc.). To communicate, one person will send commands to Airtable (described in the next tab), and these commands will be read by a receiving source that reads the commands and runs the corresponding action to the command. <br> <br>
     </div>
 
     <div id="airtableIntro" class="tabcontent">
@@ -191,7 +192,7 @@
 
       <p align=center><img src='./resources/AirTableDiagram.jpg' height=300 width=450/></p>
 
-      In our examples, we use AirTable to allow our computers and robots to write and receive commands (respectively) over long distances. We post commands to AirTable that a receiving robot or computer subscribes to, interprets, and translates into the corresponding action. <br> <br>
+      In our examples, we use Airtable to allow our computers and robots to write and receive commands (respectively) over long distances. We post commands to Airtable that a receiving robot or computer subscribes to, interprets, and translates into the corresponding action. <br> <br>
 
       <i>Based on documentation originally written by Dr. Ethan Danahy <br>
       <a href="http://dreslab.com/">Dr.E's Lab</a></i>
@@ -252,13 +253,16 @@
     We want to do this in as many ways as possible. So please-- do something different than us! <br>
     <br> 
     <b> Need some guidance?</b> <br>
-    Try the setup below to start communicating with another robot.
+    We've set up an <a href="https://airtable.com/shr34H7Mv2rENspvq">Airtable</a> where each robot has a little "mailbox" for commands. The mailbox is identified by a <b> unique </b> ID. To move the correct robot, please make sure you send your movement commands to the <b> correct "mailbox". </b> We will assign you mailboxes!
+      <br> 
+      <br> 
+      Grab a partner and work together to send and recieve commands on your robot. Use the displays below to do so! And let us know if you have any questions / concerns. 
+      <br> 
+      <br> 
     
     <p>
       <h3 class='steps'>SENDING MOVEMENT INFORMATION</h3> 
-      We've set up an AirTable where each robot has a little "mailbox" for commands. The mailbox is identified by a <b> unique </b> ID. To send your commands to the correct "mailbox", and therefore move the correct robot, please make sure you send your movement commands to the <b> correct "mailbox". </b> We will assign you mailboxes!
-      <br> 
-      <br> 
+      
       
       <p style="text-align:center;">
         <label for="robotNumberSend">I want to control Robot #</label>
@@ -276,16 +280,18 @@
           <button class="btn btn1" onclick="update_airtable('backward');"> Backward </button>
     
           <br> <br> <br> <br>
+          These action buttons don't do anything at the moment. Copy the code below into your own editor to add your own actions! <br> <br> 
           <button class="btn btn2" onclick="update_airtable('action1');"> Action 1 </button>
           <button class="btn btn2" onclick="update_airtable('action2');"> Action 2 </button>
-    <br> <br> <br> <br> 
-          <button class="btn btn2" onclick="update_airtable('no_command');"> No Command </button>
+<!--     <br> <br> <br> <br> 
+          <button class="btn btn2" onclick="update_airtable('no_command');"> No Command </button> -->
         </p>
       <br>
       <br> 
-      Want to set up your own airtable? Follow <a href="https://docs.google.com/document/d/1-lBXxY9SRxkj5YPd5eincCnfen9G5I4S5P0lEUazADA/edit?usp=sharing">this AirTable set-up documentation</a>. 
+    
+      Want to set up your own airtable? Follow <a href="https://docs.google.com/document/d/1-lBXxY9SRxkj5YPd5eincCnfen9G5I4S5P0lEUazADA/edit?usp=sharing">this Airtable set-up documentation</a>. 
       <br> <br>
-      Want to play around with this code? Here's the GitHub link! <br> 
+      Want to play around with this code that sends the commands to Airtable? Here's the GitHub link! <br> 
       <a href=""></a>
 
     </p>
@@ -301,15 +307,18 @@
     
     <div id="SPIKE" class="tabcontent">
       <h3>SPIKE Prime</h3>
-        To receive the correct movement commands: <br>
+        
+      
+      To receive the correct movement commands: <br>
         <ul>
 			    <li> Make sure you subscribe to the <b> correct "mailbox" number. </b> </li>
-          <li> Connect your SPIKE Prime using Service Dock (click on the icon and the port you're using. Once the circle turns from red to green, you're good to go!)</li>
+          <li> Click on the <b>SPIKE Prime ServiceDock</b> icon in the upper right-hand corner of the page. Select the port your robot is connected to. Once the circle turns from red to green, you're good to go! If you're having issues connecting, make sure you're closed out of any other SPIKE Prime-related software. ServiceDock can't compete with all that. :( </li>
+          <li> The robot may take a second to register the first command. If it doesn't work after a couple seconds, though, please let us know!</li>
         </ul>
           <br>
         <p style="text-align:center;">
           <label for="robotNumberSubscribe">I want to subscribe to Robot #</label>
-          <input type="text" id="robotNumberSubscribe" name="robotNumberSubscribe"><br><br>
+          <input type="number" id="robotNumberSubscribe" name="robotNumberSubscribe"><br><br>
         </p>
       <br>
       Want to play around with this code? Here's the GitHub link! <br> 
@@ -317,25 +326,23 @@
       <br>
       
       <b>Activity Extensions</b> <br>
-      <mark>HACKATHON TASK:</mark> Come up with one (or more) questions / ideas to inspire or challenge coders
+      <mark>HACKATHON TASK:</mark> Come up with one (or more) questions / ideas to inspire or challenge coders. Also, was there anything confusing about our current structure? 
       <br>
       <br>
     </div>
     
     <div id="RasPi" class="tabcontent">
       <h3>Raspberry Pi + PiHat</h3>
-      To receive the correct movement commands, make sure you <b> update the code </b> so that it matches your <b> "mailbox" </b> name and Robot ID. 
+      To receive the correct movement commands, make sure you: <br> 
+      <ul> 
+        <li><b>Download</b> this python file to your RasPi 
+        <li><b>Import</b> the correct libraries (noted in the code)</li>
+        <li><b>Update the code </b> so that it matches your "mailbox" name and Robot ID </li>
+      </ul>
       <br>
-      <br>
-      Want to play around with this HTML code? Copy and paste this: **********************************************************
-      <br> 
-      <br>
-      Want to play around with this code? Here's the GitHub link! <br> 
-      <a href=""></a>
-      <br>
-      
+    
       <b>Activity Extensions</b> <br>
-      <mark>HACKATHON TASK:</mark> Come up with one (or more) questions / ideas to inspire or challenge coders
+      <mark>HACKATHON TASK:</mark> Come up with one (or more) questions / ideas to inspire or challenge coders. Also, was there anything confusing about our current structure? 
       <br>
       <br>
     </div>
